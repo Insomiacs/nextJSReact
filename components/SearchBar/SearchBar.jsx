@@ -1,3 +1,4 @@
+// @flow
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
@@ -40,7 +41,21 @@ const CriteriaTitle = styled.span`
     font-weight: bold;
 `;
 
-class SearchBar  extends Component {
+type Props = {
+    router: {
+        query: {
+            name: string
+        }
+    },
+    selectSearchType: (value: string) => void,
+    updateSearchQuery: (value: string) => void
+}
+
+type State = {
+    searchValue: string
+}
+
+class SearchBar extends Component<Props, State> {
     state = {
         searchValue: ''
     };

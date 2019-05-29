@@ -1,3 +1,4 @@
+// @flow
 import React, {Component} from 'react';
 import styled from 'styled-components';
 import { bindActionCreators } from 'redux';
@@ -40,15 +41,18 @@ const Content = styled.div`
     justify-content: space-between;
 `;
 
-class MoviesContent extends Component {
-    state = {
-        movies: []
-    };
+type Props = {
+    loadMovies: () => void,
+    updateSortType: (type: string) => void,
+    movies: Object
+}
+
+class MoviesContent extends Component<Props> {
     componentDidMount() {
         this.props.loadMovies();
     }
 
-    updateSortType = (type) => () => {
+    updateSortType = (type: string) => () => {
         this.props.updateSortType(type)
     };
 
@@ -99,4 +103,4 @@ const mapDispatchToProps = (dispatch) => bindActionCreators({
     updateSortType
 }, dispatch);
 
-export default connect(mapStateToProps, mapDispatchToProps)(MoviesContent)
+export default connect<Props, *, *, *, *, *>(mapStateToProps, mapDispatchToProps)(MoviesContent)

@@ -1,3 +1,4 @@
+// @flow
 import { UPDATE_SEARCH_QUERY, UPDATE_SEARCH_TYPE } from '../actions/search';
 
 const initialState = {
@@ -5,7 +6,7 @@ const initialState = {
   searchQuery: '',
 };
 
-export default (state = initialState, action) => {
+export default (state: Object = initialState, action: Object) => {
   switch (action.type) {
     case UPDATE_SEARCH_QUERY:
       return {

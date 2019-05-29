@@ -1,10 +1,13 @@
+// @flow
 import axios from 'axios';
 
 export const LOAD_MOVIE_REQUEST = 'LOAD_MOVIE_REQUEST';
 export const LOAD_MOVIE_SUCCESS = 'LOAD_MOVIE_SUCCESS';
 export const LOAD_MOVIE_FAILURE = 'LOAD_MOVIE_FAILURE';
 
-export const loadMovie = id => (dispatch) => {
+type Dispatch = (action: Object) => any;
+
+export const loadMovie = (id: number) => (dispatch: Dispatch) => {
   dispatch({
     type: LOAD_MOVIE_REQUEST,
   });

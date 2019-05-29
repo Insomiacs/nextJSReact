@@ -1,3 +1,4 @@
+// @flow
 import React, { Component } from 'react';
 import { Router } from '../../../server/routes';
 
@@ -29,8 +30,15 @@ const MovieGenres = styled.span`
     margin-top: 15px;
 `;
 
-class Movie extends Component {
-    changeMovie = (id) => () => {
+type Props = {
+    id: string,
+    image: string,
+    title: string,
+    genres: Array<string>
+}
+
+class Movie extends Component<Props> {
+    changeMovie = (id: string) => () => {
         Router.pushRoute('film', { id })
     };
     render() {

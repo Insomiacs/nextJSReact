@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import styled from 'styled-components';
 
@@ -11,13 +12,19 @@ const StyledInput = styled.input`
     padding: 0 20px;
 `;
 
-const Input = (props) => (
-    <StyledInput
-        type="text"
-        value={props.value}
-        onChange={(e) => props.onChange(e)}
-        onKeyUp={(e) => props.submitSearchOnEnter(e)}
-    />
+type Props = {
+    value: string,
+    onChange: (e: Object) => void,
+    submitSearchOnEnter: (e: Object) => void
+}
+
+const Input = ({ value, onChange, submitSearchOnEnter }: Props) => (
+  <StyledInput
+    type="text"
+    value={value}
+    onChange={e => onChange(e)}
+    onKeyUp={e => submitSearchOnEnter(e)}
+  />
 );
 
 export default Input;

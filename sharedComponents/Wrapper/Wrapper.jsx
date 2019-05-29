@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import styled from 'styled-components';
 
@@ -7,10 +8,14 @@ const MainWrapper = styled.div`
   position: relative;
 `;
 
-const Wrapper = (props) => (
-    <MainWrapper>
-        {props.children}
-    </MainWrapper>
+type Props = {
+    children?: any
+};
+
+const Wrapper = ({ children }: Props ) => (
+  <MainWrapper>
+    { children }
+  </MainWrapper>
 );
 
 export default Wrapper;

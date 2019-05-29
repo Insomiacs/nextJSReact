@@ -1,8 +1,9 @@
+// @flow
 import React from 'react';
 import styled from 'styled-components';
 
 import Logo from '../../sharedComponents/Logo/Logo';
-import Wrapper from '../../sharedComponents/Wrapper/Wrapper';
+import Wrapper from '../../sharedComponents/Wrapper';
 import SearchBar from '../SearchBar';
 
 const HeaderWrapper = styled.div`

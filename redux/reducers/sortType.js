@@ -1,10 +1,11 @@
+// @flow
 import { UPDATE_SORT_TYPE } from '../actions/sort';
 
 const initialState = {
   type: 'vote_average',
 };
 
-export default (state = initialState, action) => {
+export default (state: Object = initialState, action: Object) => {
   if (action.type === UPDATE_SORT_TYPE) {
     return {
       ...state,

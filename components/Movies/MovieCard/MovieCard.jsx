@@ -1,3 +1,4 @@
+// @flow
 import React, { Component } from 'react';
 import Link from 'next/link';
 import { withRouter } from 'next/router';
@@ -60,9 +61,19 @@ const MovieDescription = styled.div`
     margin-bottom: 50px;
 `;
 
-class MovieCard extends Component {
+type Props = {
+    router: Object,
+    loadMovie: (id: string) => Object,
+    selectedMovie: Object
+}
+
+type State = {
+    selectedId: string
+}
+
+class MovieCard extends Component<Props, State> {
     state = {
-        selectedId: null
+        selectedId: '',
     };
 
     componentDidMount() {

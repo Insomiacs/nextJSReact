@@ -1,4 +1,6 @@
-import Link from 'next/link'
+// @flow
+import React from 'react';
+import Link from 'next/link';
 import styled from 'styled-components';
 
 const MainLogo = styled.div`
@@ -7,16 +9,14 @@ const MainLogo = styled.div`
   font-weight: 600;
 `;
 
-const Logo = () => {
-    return (
-        <Link
-            href="/"
-        >
-            <MainLogo>
-                <a>netflixroulette</a>
-            </MainLogo>
-        </Link>
-    );
-};
+const Logo = () => (
+  <Link
+    href="/"
+  >
+    <MainLogo>
+      <a>netflixroulette</a>
+    </MainLogo>
+  </Link>
+);
 
 export default Logo;

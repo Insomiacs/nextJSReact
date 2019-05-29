@@ -5,6 +5,7 @@ extends: airbnb
 globals:
   Atomics: readonly
   SharedArrayBuffer: readonly
+parser: babel-eslint
 parserOptions:
   ecmaFeatures:
     jsx: true
@@ -15,6 +16,7 @@ plugins:
   - flowtype
 rules: {
   import/named: false,
+  import/prefer-default-export: false,
   "max-len": ["error", 250, 2, {
     ignoreUrls: true,
     ignoreComments: false,
@@ -22,4 +24,5 @@ rules: {
     ignoreStrings: false,
     ignoreTemplateLiterals: false,
   }],
+  react/jsx-filename-extension: 0
 }

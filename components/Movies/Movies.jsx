@@ -1,8 +1,13 @@
+// @flow
 import React, { Fragment } from 'react';
 
 import Movie from './Movie';
 
-const Movies = ({ movies }) => (
+type Props = {
+  movies: Array<Object>
+}
+
+const Movies = ({ movies }: Props) => (
   <Fragment>
     {
             movies.length ? movies.map(movie => (
