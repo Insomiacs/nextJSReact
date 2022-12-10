@@ -12,7 +12,7 @@
     "axios": "^0.18.0",
     "babel-eslint": "^10.0.1",
     "cross-env": "^5.2.0",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "flow-typed": "^2.5.2",
     "lodash": "^4.17.11",
     "next": "^8.1.0",
